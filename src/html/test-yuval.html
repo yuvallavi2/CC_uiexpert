@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registered Members</title>
+  <link rel="stylesheet" href="../css/project.css">
+</head>
+<body>
+  <div class="container-page">
+    <!-- Registered Members Component -->
+    <div class="card">
+      <div class="cluster">
+        <h1 class="h2">Registered Members</h1>
+        <button type="button" id="btnAddMember" class="btn btn--primary">
+          Add Member
+        </button>
+      </div>
+
+      <!-- Members Table -->
+      <div class="u-mt-4">
+        <table class="table" id="Table_M_Contact">
+          <thead>
+            <tr>
+              <th id="ColumnMember">Member</th>
+              <th id="ColumnAction">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Sample member rows for demonstration -->
+            <tr>
+              <td>
+                <span id="Name">John Smith</span>
+              </td>
+              <td>
+                <button type="button" id="btnDelete" class="btn btn--danger">
+                  Delete
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span id="Name">Sarah Johnson</span>
+              </td>
+              <td>
+                <button type="button" id="btnDelete" class="btn btn--danger">
+                  Delete
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span id="Name">Michael Brown</span>
+              </td>
+              <td>
+                <button type="button" id="btnDelete" class="btn btn--danger">
+                  Delete
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <span id="Name">Emily Davis</span>
+              </td>
+              <td>
+                <button type="button" id="btnDelete" class="btn btn--danger">
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Empty State (hidden by default, shown when no members) -->
+      <div class="u-center u-mt-4 u-hidden" id="emptyState">
+        <div class="card--soft">
+          <p class="muted">No members registered yet.</p>
+          <p class="caption">Click "Add Member" to get started.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
