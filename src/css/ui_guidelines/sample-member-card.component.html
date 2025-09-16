@@ -1,0 +1,305 @@
+<!--
+  Sample Angular Component: Member Profile Card
+  Demonstrates Stitch Menarva UI patterns and RTL support
+
+  Component Usage:
+  <app-member-card [member]="memberData" (onEdit)="editMember($event)"></app-member-card>
+-->
+
+<!-- Member Profile Card -->
+<div class="card" dir="rtl">
+  <!-- Card Header with Avatar and Basic Info -->
+  <div class="flex items-start justify-between mb-6">
+    <div class="flex items-center space-x-4 space-x-reverse">
+      <!-- Member Avatar -->
+      <img
+        [src]="member.avatarUrl || 'assets/default-avatar.png'"
+        [alt]="member.name + ' profile picture'"
+        class="avatar-large"
+      >
+
+      <!-- Member Info -->
+      <div class="flex-1">
+        <h2 class="text-xl font-semibold text-gray-900 mb-1">
+          {{ member.name }}
+        </h2>
+
+        <!-- Membership Status Badge -->
+        <span
+          class="badge"
+          [ngClass]="{
+            'badge-active': member.status === 'active',
+            'badge-inactive': member.status === 'inactive',
+            'badge-premium': member.status === 'premium',
+            'badge-pending': member.status === 'pending'
+          }"
+        >
+          {{ getStatusLabel(member.status) }}
+        </span>
+
+        <!-- Member ID -->
+        <p class="text-sm text-gray-600 mt-2">
+          מזהה חבר: {{ member.id }}
+        </p>
+
+        <!-- Join Date -->
+        <p class="text-sm text-gray-600">
+          תאריך הצטרפות: {{ member.joinDate | date:'dd/MM/yyyy' }}
+        </p>
+      </div>
+    </div>
+
+    <!-- Action Menu -->
+    <div class="flex space-x-2 space-x-reverse">
+      <button
+        class="btn btn-ghost btn-small"
+        (click)="onEdit.emit(member)"
+        [attr.aria-label]="'ערוך את ' + member.name"
+      >
+        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+        </svg>
+        עריכה
+      </button>
+
+      <button
+        class="btn btn-ghost btn-small"
+        (click)="showContactMenu = !showContactMenu"
+        [attr.aria-label]="'פרטי התקשרות של ' + member.name"
+      >
+        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v.01M12 12v.01M12 19v.01M12 6a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Contact Information Section -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+    <!-- Email -->
+    <div class="flex items-center">
+      <svg class="w-5 h-5 text-gray-500 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"></path>
+      </svg>
+      <div>
+        <p class="text-sm text-gray-600">אימייל</p>
+        <p class="font-medium">
+          <a [href]="'mailto:' + member.email" class="text-primary hover:underline">
+            {{ member.email }}
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Phone -->
+    <div class="flex items-center">
+      <svg class="w-5 h-5 text-gray-500 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+      </svg>
+      <div>
+        <p class="text-sm text-gray-600">טלפון</p>
+        <p class="font-medium">
+          <a [href]="'tel:' + member.phone" class="text-primary hover:underline">
+            {{ member.phone }}
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Address -->
+    <div class="flex items-start md:col-span-2">
+      <svg class="w-5 h-5 text-gray-500 ml-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+      </svg>
+      <div>
+        <p class="text-sm text-gray-600">כתובת</p>
+        <p class="font-medium leading-relaxed">{{ member.address }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Membership Details Section -->
+  <div class="border-t border-gray-200 pt-4">
+    <h3 class="text-lg font-semibold text-gray-900 mb-3">פרטי חברות</h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <!-- Membership Type -->
+      <div>
+        <p class="text-sm text-gray-600">סוג חברות</p>
+        <p class="font-medium">{{ getMembershipTypeLabel(member.membershipType) }}</p>
+      </div>
+
+      <!-- Last Activity -->
+      <div>
+        <p class="text-sm text-gray-600">פעילות אחרונה</p>
+        <p class="font-medium">{{ member.lastActivity | date:'dd/MM/yyyy' }}</p>
+      </div>
+
+      <!-- Total Events -->
+      <div>
+        <p class="text-sm text-gray-600">סה"כ אירועים</p>
+        <p class="font-medium">{{ member.totalEvents }}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recent Events Section (if available) -->
+  <div *ngIf="member.recentEvents?.length" class="border-t border-gray-200 pt-4 mt-4">
+    <h4 class="text-md font-semibold text-gray-900 mb-3">השתתפות באירועים אחרונים</h4>
+
+    <div class="space-y-2">
+      <div
+        *ngFor="let event of member.recentEvents | slice:0:3"
+        class="flex justify-between items-center py-2"
+      >
+        <span class="text-sm">{{ event.name }}</span>
+        <span class="text-xs text-gray-600">{{ event.date | date:'dd/MM' }}</span>
+      </div>
+
+      <!-- View All Events Link -->
+      <button
+        *ngIf="member.recentEvents.length > 3"
+        class="text-sm text-primary hover:underline"
+        (click)="viewAllEvents(member.id)"
+      >
+        הצג את כל האירועים ({{ member.recentEvents.length }})
+      </button>
+    </div>
+  </div>
+
+  <!-- Action Buttons -->
+  <div class="flex justify-start space-x-3 space-x-reverse mt-6 pt-4 border-t border-gray-200">
+    <button
+      class="btn btn-primary"
+      (click)="sendMessage(member)"
+      [attr.aria-label]="'שלח הודעה ל-' + member.name"
+    >
+      <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+      </svg>
+      שלח הודעה
+    </button>
+
+    <button
+      class="btn btn-secondary"
+      (click)="addToEvent(member)"
+      [attr.aria-label]="'הוסף את ' + member.name + ' לאירוע'"
+    >
+      <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+      </svg>
+      הוסף לאירוע
+    </button>
+
+    <button
+      class="btn btn-ghost"
+      (click)="viewProfile(member.id)"
+      [attr.aria-label]="'צפה בפרופיל המלא של ' + member.name"
+    >
+      צפה בפרופיל
+    </button>
+  </div>
+</div>
+
+<!--
+  Component TypeScript Interface:
+
+  export interface Member {
+    id: string;
+    name: string;
+    email: string;
+    phone: string;
+    address: string;
+    status: 'active' | 'inactive' | 'premium' | 'pending';
+    membershipType: 'regular' | 'premium' | 'vip';
+    joinDate: Date;
+    lastActivity: Date;
+    totalEvents: number;
+    avatarUrl?: string;
+    recentEvents?: RecentEvent[];
+  }
+
+  export interface RecentEvent {
+    id: string;
+    name: string;
+    date: Date;
+  }
+
+  Component Methods to implement:
+
+  getStatusLabel(status: string): string {
+    const labels = {
+      'active': 'פעיל',
+      'inactive': 'לא פעיל',
+      'premium': 'פרימיום',
+      'pending': 'ממתין'
+    };
+    return labels[status] || status;
+  }
+
+  getMembershipTypeLabel(type: string): string {
+    const labels = {
+      'regular': 'רגיל',
+      'premium': 'פרימיום',
+      'vip': 'VIP'
+    };
+    return labels[type] || type;
+  }
+
+  // Output events
+  @Output() onEdit = new EventEmitter<Member>();
+  @Output() onSendMessage = new EventEmitter<Member>();
+  @Output() onAddToEvent = new EventEmitter<Member>();
+  @Output() onViewProfile = new EventEmitter<string>();
+  @Output() onViewAllEvents = new EventEmitter<string>();
+-->
+
+<!-- SCSS Styles (member-card.component.scss) -->
+<style lang="scss">
+  // Component-specific styles
+  .member-card-container {
+    .contact-info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .recent-events-list {
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    // RTL specific adjustments
+    [dir="rtl"] & {
+      .action-buttons {
+        flex-direction: row-reverse;
+      }
+
+      .contact-icon {
+        margin-left: 0.5rem;
+        margin-right: 0;
+      }
+    }
+  }
+
+  // Responsive improvements
+  @media (max-width: 640px) {
+    .card {
+      padding: 1rem;
+    }
+
+    .btn {
+      font-size: 0.875rem;
+      padding: 0.5rem 1rem;
+    }
+
+    .grid-cols-3 {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
