@@ -1,0 +1,202 @@
+{
+	"style":	null,
+	"props":	{
+		"id":	"EventCard",
+		"window_type":	12,
+		"component_path":	"Events/EventCard/",
+		"module_name":	"",
+		"component_uniquename":	"EventCard_EventCard"
+	},
+	"hint":	null,
+	"controlType":	null,
+	"children":	[
+		{
+			"style":	null,
+			"props":	{
+				"id":	"Event_ID",
+				"enabled":	{
+					"value":	null,
+					"has_exp":	true
+				},
+				"modifiable":	false,
+				"mgformat":	"mgFormat",
+				"format":	"##########",
+				"attribute":	"N",
+				"common_line_id":	"line12"
+			},
+			"hint":	null,
+			"controlType":	"T",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"P_pBtnVisibility",
+				"items_list":	"True,False",
+				"mgformat":	"mgFormat",
+				"validator":	"rangevalidator",
+				"format":	"XXXXX",
+				"attribute":	"B",
+				"common_line_id":	"line12"
+			},
+			"hint":	null,
+			"controlType":	"T",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"ComboEventType",
+				"must_input":	true,
+				"items_list":	"",
+				"attribute":	"N",
+				"common_line_id":	"line45"
+			},
+			"hint":	null,
+			"controlType":	"D",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"Event_Name",
+				"mgformat":	"mgFormat",
+				"format":	"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+				"attribute":	"A",
+				"common_line_id":	"line81"
+			},
+			"hint":	null,
+			"controlType":	"T",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"ComboEventLocation",
+				"items_list":	"",
+				"attribute":	"N",
+				"common_line_id":	"line120"
+			},
+			"hint":	null,
+			"controlType":	"D",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"Start_Date",
+				"must_input":	true,
+				"mgformat":	"mgFormat",
+				"format":	"DD/MM/YYYY",
+				"attribute":	"D",
+				"common_line_id":	"line150"
+			},
+			"hint":	null,
+			"controlType":	"T",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"End_Date",
+				"must_input":	true,
+				"mgformat":	"mgFormat",
+				"format":	"DD/MM/YYYY",
+				"attribute":	"D",
+				"common_line_id":	"line150"
+			},
+			"hint":	null,
+			"controlType":	"T",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"EventStartTime",
+				"format":	"HH:MM",
+				"attribute":	"T",
+				"common_line_id":	"line182"
+			},
+			"hint":	null,
+			"controlType":	"T",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"Event_Inforrmation_End_Time",
+				"format":	"HH:MM",
+				"attribute":	"T",
+				"common_line_id":	"line182"
+			},
+			"hint":	null,
+			"controlType":	"T",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"Minimum_Attendees",
+				"mgformat":	"mgFormat",
+				"format":	"#####",
+				"attribute":	"N",
+				"common_line_id":	"line218"
+			},
+			"hint":	null,
+			"controlType":	"T",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"Maximum_Attendees",
+				"mgformat":	"mgFormat",
+				"format":	"#####",
+				"attribute":	"N",
+				"common_line_id":	"line218"
+			},
+			"hint":	null,
+			"controlType":	"T",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"btnSave",
+				"enabled":	{
+					"value":	null,
+					"has_exp":	true
+				},
+				"button_style":	1,
+				"format":	"Save",
+				"common_line_id":	"line263"
+			},
+			"hint":	null,
+			"controlType":	"B",
+			"children":	null
+		},
+		{
+			"style":	{
+				"border":	true
+			},
+			"props":	{
+				"id":	"SfRegisteredMembers",
+				"common_line_id":	"line300"
+			},
+			"hint":	null,
+			"controlType":	"F",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"btnQuit",
+				"format":	"CreateQuit",
+				"common_line_id":	"line360"
+			},
+			"hint":	null,
+			"controlType":	"B",
+			"children":	null
+		}
+	]
+}

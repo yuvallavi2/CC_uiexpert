@@ -1,0 +1,59 @@
+{
+  "env": {},
+  "permissions": {
+    "allow": [
+      "Bash(grep:*)",
+      "Bash(ls:*)",
+      "Bash(source:*)",
+      "Bash(find:*)",
+      "Bash(mv:*)",
+      "Bash(mkdir:*)",
+      "Bash(tree:*)",
+      "Bash(ruff:*)",
+      "Bash(touch:*)",
+      "Bash(chmod:*)",
+      "Bash(cat:*)",
+      "Bash(ruff check:*)",
+      "Bash(pytest:*)",
+      "Bash(python:*)",
+      "Bash(python -m pytest:*)",
+      "Bash(python3 -m pytest:*)",
+      "WebFetch(domain:*)",
+      "Bash(gh issue view:*)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "mcp__memory__aim_create_entities",
+      "mcp__memory__aim_create_relations",
+      "mcp__memory__aim_read_graph",
+      "mcp__memory__aim_delete_entities",
+      "mcp__memory__aim_add_observations",
+      "mcp__memory__aim_search_nodes",
+      "mcp__memory__aim_open_nodes",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(pip3 install:*)",
+      "Bash(playwright install:*)",
+      "Bash(npx playwright install:*)",
+      "Bash(npx playwright test:*)",
+      "Bash(npm install:*)",
+      "Bash(node:*)",
+      "Bash(npm init:*)",
+      "Bash(sudo npx playwright:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "github-integration"
+  ],
+  "hooks": {
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -c \"[console]::beep(800,300); [console]::beep(1000,200)\""
+          }
+        ]
+      }
+    ]
+  }
+}

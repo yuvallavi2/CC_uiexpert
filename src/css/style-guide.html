@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Eventit UI Style Guide</title>
+  <link rel="stylesheet" href="project.css">
+  <style>
+    body { padding: 2rem; font-family: var(--font-family-sans); }
+    h1, h2 { margin-top: 2rem; }
+    .demo-grid { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+    .demo-block { background: var(--color-bg-secondary); padding: 1rem; border-radius: var(--radius-md); }
+  </style>
+</head>
+<body>
+  <h1>Eventit UI Style Guide</h1>
+  <p>This page demonstrates all reusable UI components defined in <code>project.css</code>.</p>
+
+  <h2>Typography</h2>
+  <div class="demo-block">
+    <div class="h1">Heading 1 (h1)</div>
+    <div class="h2">Heading 2 (h2)</div>
+    <p>Body text example – regular font</p>
+    <p class="muted">Muted text example</p>
+    <p class="caption">Caption text example</p>
+  </div>
+
+  <h2>Buttons</h2>
+  <div class="demo-grid">
+    <button class="btn btn--primary">Primary Button</button>
+    <button class="btn btn--danger">Danger Button</button>
+    <button class="btn btn--ghost">Ghost Button</button>
+    <button class="btn btn--primary" disabled>Disabled Button</button>
+  </div>
+
+  <h2>Cards</h2>
+  <div class="card">
+    <h3 class="h2">Card Title</h3>
+    <p>This is a card body with text and actions below.</p>
+    <div class="cluster u-mt-4">
+      <button class="btn btn--primary">Action</button>
+      <button class="btn btn--ghost">Cancel</button>
+    </div>
+  </div>
+
+  <h2>Inputs</h2>
+  <div class="demo-grid">
+    <input class="input" placeholder="Text input" />
+    <select class="select">
+      <option>Option 1</option>
+      <option>Option 2</option>
+    </select>
+    <textarea class="textarea" placeholder="Textarea"></textarea>
+    <label><input type="checkbox" class="switch" /> Toggle switch</label>
+  </div>
+
+  <h2>Tables</h2>
+  <table class="table">
+    <thead>
+      <tr><th>Name</th><th>Status</th><th>Action</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Alice</td>
+        <td><span class="badge badge--success">Active</span></td>
+        <td><button class="btn btn--ghost">View</button></td>
+      </tr>
+      <tr>
+        <td>Bob</td>
+        <td><span class="badge badge--info">Scheduled</span></td>
+        <td><button class="btn btn--primary">Edit</button></td>
+      </tr>
+      <tr>
+        <td>Carol</td>
+        <td><span class="badge badge--danger">Inactive</span></td>
+        <td><button class="btn btn--danger">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Badges</h2>
+  <div class="demo-grid">
+    <span class="badge badge--success">Success</span>
+    <span class="badge badge--info">Info</span>
+    <span class="badge badge--danger">Danger</span>
+    <span class="badge badge--warning">Warning</span>
+  </div>
+
+  <h2>Sidebar</h2>
+  <div class="sidebar demo-grid" style="flex-direction: column; width: 200px;">
+    <a class="sidebar__item sidebar__item--active">Dashboard</a>
+    <a class="sidebar__item">Members</a>
+    <a class="sidebar__item">Events</a>
+  </div>
+
+  <h2>Topbar</h2>
+  <div class="topbar">
+    <span class="h2">Logo</span>
+    <div class="cluster" style="margin-left:auto;">
+      <input class="input" placeholder="Search" style="width:200px;" />
+      <button class="btn btn--primary">Profile</button>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Spline+Sans%3Awght%40400%3B500%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-50: #f0fdf6;
+        --primary-100: #dcfceb;
+        --primary-200: #bbf7d6;
+        --primary-300: #86efb9;
+        --primary-400: #4ade92;
+        --primary-500: #22c56e;
+        --primary-600: #16a357;
+        --primary-700: #158045;
+        --primary-800: #166539;
+        --primary-900: #145330;
+        --primary-950: #0a2e1a;
+      }
+    </style>
+</head>
+<body class="bg-gray-950 text-white" style='font-family: "Spline Sans", "Noto Sans", sans-serif;'>
+<div class="flex min-h-screen">
+<aside class="w-64 flex-shrink-0 bg-gray-900 p-6">
+<div class="flex flex-col gap-8">
+<h1 class="text-2xl font-bold text-white">Eventit</h1>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-300 transition-colors hover:bg-gray-800 hover:text-white" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg bg-primary-600 px-3 py-2 font-semibold text-white" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>Members</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-300 transition-colors hover:bg-gray-800 hover:text-white" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span>Events</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-300 transition-colors hover:bg-gray-800 hover:text-white" href="#">
+<span class="material-symbols-outlined">inbox</span>
+<span>Communications</span>
+</a>
+<a class="flex items-center gap-3 rounded-lg px-3 py-2 text-gray-300 transition-colors hover:bg-gray-800 hover:text-white" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span>Reports</span>
+</a>
+</nav>
+</div>
+</aside>
+<main class="flex-1 overflow-y-auto">
+<div class="p-8">
+<div class="mb-8">
+<nav class="text-sm text-gray-400">
+<a class="hover:text-white" href="#">Members</a>
+<span class="mx-2">/</span>
+<span>Yuval Lavi</span>
+</nav>
+</div>
+<div class="@container">
+<div class="mb-10 flex flex-col gap-6 @[520px]:flex-row @[520px]:items-center @[520px]:justify-between">
+<div class="flex items-center gap-6">
+<div class="h-28 w-28 flex-shrink-0 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDeZE3f4j_QpBsSdoxRRDtwX-zyLay8D4rbNrMVlEr77NOwp9EEczviU-QjgciYfjkBA2yTMej-odnR5qFvqlHJFdxLWjoanVURwzijlMw8I5d8IZ3EshQO03QzVfW9xl4vLyFFRyZnlvuUkifwC4RZ7ksn6vClMYBj20uWo68ayZFb8Te3B6o-vx0gBElOsA1ZK58afmAUgJWtuaAXNWAEzcpbTWMs6zioYQqLCT7Ajb8ZSzmPkY-0OAEnu3_88cUDJhbQrndZ_0Zq");'></div>
+<div>
+<h2 class="text-3xl font-bold">Yuval Lavi</h2>
+<p class="text-gray-400">Member since January 15, 2023</p>
+<p class="text-gray-400">Member ID: 12345</p>
+</div>
+</div>
+<button class="flex h-12 items-center justify-center rounded-full bg-primary-600 px-6 font-semibold text-white transition-colors hover:bg-primary-700 @[480px]:w-auto">
+<span>Edit Profile</span>
+</button>
+</div>
+<div class="grid grid-cols-1 gap-12 lg:grid-cols-2">
+<section>
+<h3 class="mb-4 text-xl font-bold">Contact Information</h3>
+<div class="space-y-4 rounded-lg border border-gray-800 bg-gray-900 p-6">
+<div class="flex justify-between">
+<span class="text-gray-400">Email</span>
+<span class="font-medium">liam.carter@email.com</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-400">Phone</span>
+<span class="font-medium">(555) 123-4567</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-400">Address</span>
+<span class="font-medium">123 Main Street, Anytown, USA</span>
+</div>
+</div>
+</section>
+<section>
+<h3 class="mb-4 text-xl font-bold">Demographics</h3>
+<div class="space-y-4 rounded-lg border border-gray-800 bg-gray-900 p-6">
+<div class="flex justify-between">
+<span class="text-gray-400">Gender</span>
+<span class="font-medium">Male</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-400">Age</span>
+<span class="font-medium">30</span>
+</div>
+<div class="flex justify-between">
+<span class="text-gray-400">Occupation</span>
+<span class="font-medium">Software Engineer</span>
+</div>
+</div>
+</section>
+</div>
+<section class="mt-12">
+<h3 class="mb-4 text-xl font-bold">Event Participation</h3>
+<div class="overflow-x-auto rounded-lg border border-gray-800">
+<table class="w-full text-left">
+<thead class="bg-gray-800">
+<tr>
+<th class="p-4 font-semibold">Event Name</th>
+<th class="p-4 font-semibold">Date</th>
+<th class="p-4 font-semibold">Role</th>
+<th class="p-4 font-semibold">Status</th>
+<th class="p-4 font-semibold"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-800">
+<tr>
+<td class="p-4">Tech Meetup</td>
+<td class="p-4 text-gray-400">2023-03-15</td>
+<td class="p-4 text-gray-400">Attendee</td>
+<td class="p-4">
+<span class="inline-flex items-center rounded-full bg-green-900 px-3 py-1 text-sm font-medium text-green-300">Completed</span>
+</td>
+<td class="p-4 text-right">
+<button class="text-gray-400 hover:text-white">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</td>
+</tr>
+<tr>
+<td class="p-4">Community Workshop</td>
+<td class="p-4 text-gray-400">2023-04-20</td>
+<td class="p-4 text-gray-400">Volunteer</td>
+<td class="p-4">
+<span class="inline-flex items-center rounded-full bg-green-900 px-3 py-1 text-sm font-medium text-green-300">Completed</span>
+</td>
+<td class="p-4 text-right">
+<button class="text-gray-400 hover:text-white">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</td>
+</tr>
+<tr>
+<td class="p-4">Annual Conference</td>
+<td class="p-4 text-gray-400">2023-05-10</td>
+<td class="p-4 text-gray-400">Speaker</td>
+<td class="p-4">
+<span class="inline-flex items-center rounded-full bg-green-900 px-3 py-1 text-sm font-medium text-green-300">Completed</span>
+</td>
+<td class="p-4 text-right">
+<button class="text-gray-400 hover:text-white">
+<span class="material-symbols-outlined">more_horiz</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

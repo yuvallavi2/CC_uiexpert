@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Spline+Sans%3Awght%40400%3B500%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<title>Eventit - Event Registrations</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-color: #38e07b;
+      }
+      .badge {
+        @apply inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium;
+      }
+      .badge-confirmed {
+        @apply bg-blue-100 text-blue-800 dark:bg-blue-900/50 dark:text-blue-300;
+      }
+      .badge-attended {
+        @apply bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300;
+      }
+      .badge-cancelled {
+        @apply bg-red-100 text-red-800 dark:bg-red-900/50 dark:text-red-300;
+      }
+    </style>
+</head>
+<body class="bg-[#111714] text-white" style='font-family: "Spline Sans", "Noto Sans", sans-serif;'>
+<div class="flex min-h-screen flex-col">
+<header class="sticky top-0 z-10 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#29382f] bg-[#111714]/80 px-10 py-3 backdrop-blur-sm">
+<div class="flex items-center gap-4">
+<div class="size-6 text-[var(--primary-color)]">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z" fill="currentColor"></path>
+</svg>
+</div>
+<h1 class="text-xl font-bold">Eventit</h1>
+</div>
+<nav class="flex items-center gap-8">
+<a class="text-sm font-medium text-white/80 hover:text-white transition-colors" href="#">Dashboard</a>
+<a class="text-sm font-bold text-white" href="#">Events</a>
+<a class="text-sm font-medium text-white/80 hover:text-white transition-colors" href="#">Members</a>
+<a class="text-sm font-medium text-white/80 hover:text-white transition-colors" href="#">Reports</a>
+<a class="text-sm font-medium text-white/80 hover:text-white transition-colors" href="#">Settings</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="relative">
+<span class="material-symbols-outlined text-white/80 hover:text-white transition-colors"> notifications </span>
+<span class="absolute top-0 right-0 block h-2 w-2 rounded-full bg-red-500 ring-2 ring-[#111714]"></span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC_2DYiP8d3fLnJZUaecz290P3dQhjiV6WqbcF1-edf9MjFpkdgTRp1_RmATFo8vDgXobaxRLR7kT5bwDsvkUMlcK3TvChUZwE20YHvPCY_qK4c_lJ4hfjNxCQpLVYUr7V1JWN6CgWTyfst1SF8XY5m475DR75LOWWWE1yROELDsn4j5LV7upXl6RlOMTLhOKLk-8ZQGrndmspeiqoSBC7HfvIW-d8F1kiEg-LncimxptMbWiJ013YIFbi8WZVc4wN0FSdwXVJrGq9R");'></div>
+</div>
+</header>
+<main class="flex-1 px-10 py-8">
+<div class="mx-auto max-w-7xl">
+<div class="flex items-center justify-between mb-8">
+<div class="flex flex-col gap-1">
+<h2 class="text-3xl font-bold tracking-tight">Community Tech Meetup</h2>
+<p class="text-sm text-[#9eb7a8]">Manage member registrations for this event.</p>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 min-w-[84px] cursor-pointer justify-center overflow-hidden rounded-full h-10 px-4 bg-[#29382f] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#34463c] transition-colors">
+<span class="material-symbols-outlined text-base"> person_add </span>
+<span class="truncate">Add Member</span>
+</button>
+<button class="flex items-center gap-2 min-w-[84px] cursor-pointer justify-center overflow-hidden rounded-full h-10 px-4 bg-[var(--primary-color)] text-[#111714] text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-base"> ios_share </span>
+<span class="truncate">Export List</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<div class="lg:col-span-1 space-y-6">
+<div class="bg-[#1c2620] rounded-2xl p-6">
+<h3 class="font-bold text-lg mb-4">Event Details</h3>
+<dl class="space-y-4 text-sm">
+<div class="flex justify-between">
+<dt class="text-[#9eb7a8]">Date</dt>
+<dd class="font-medium">July 15, 2024</dd>
+</div>
+<div class="flex justify-between">
+<dt class="text-[#9eb7a8]">Time</dt>
+<dd class="font-medium">6:00 PM - 8:00 PM</dd>
+</div>
+<div class="flex justify-between items-center">
+<dt class="text-[#9eb7a8]">Capacity</dt>
+<dd class="font-medium">100</dd>
+</div>
+<div class="flex justify-between items-center">
+<dt class="text-[#9eb7a8]">Registered</dt>
+<dd class="font-medium">75</dd>
+</div>
+<div class="w-full bg-[#29382f] rounded-full h-2.5 mt-2">
+<div class="bg-[var(--primary-color)] h-2.5 rounded-full" style="width: 75%"></div>
+</div>
+</dl>
+</div>
+</div>
+<div class="lg:col-span-2">
+<div class="bg-[#1c2620] rounded-2xl">
+<div class="px-6 py-4 border-b border-[#29382f]">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#9eb7a8]"> search </span>
+<input class="form-input w-full rounded-full bg-[#29382f] border-none text-white placeholder:text-[#9eb7a8] pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-[var(--primary-color)] transition" placeholder="Search members by name or email..." value=""/>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-sm text-left">
+<thead class="text-xs text-[#9eb7a8] uppercase">
+<tr>
+<th class="px-6 py-3" scope="col">Member Name</th>
+<th class="px-6 py-3" scope="col">Email</th>
+<th class="px-6 py-3" scope="col">Registration Date</th>
+<th class="px-6 py-3" scope="col">Attendance</th>
+<th class="px-6 py-3" scope="col"><span class="sr-only">Actions</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-[#29382f] hover:bg-[#29382f]/50 transition-colors">
+<td class="px-6 py-4 font-medium text-white">Ethan Harper</td>
+<td class="px-6 py-4 text-[#9eb7a8]">ethan.harper@example.com</td>
+<td class="px-6 py-4 text-[#9eb7a8]">July 1, 2024</td>
+<td class="px-6 py-4">
+<span class="badge badge-confirmed">
+<span class="material-symbols-outlined text-xs"> check_circle </span>
+                            Confirmed
+                          </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-[#9eb7a8] hover:text-white">
+<span class="material-symbols-outlined"> more_vert </span>
+</button>
+</td>
+</tr>
+<tr class="border-b border-[#29382f] hover:bg-[#29382f]/50 transition-colors">
+<td class="px-6 py-4 font-medium text-white">Olivia Bennett</td>
+<td class="px-6 py-4 text-[#9eb7a8]">olivia.bennett@example.com</td>
+<td class="px-6 py-4 text-[#9eb7a8]">July 2, 2024</td>
+<td class="px-6 py-4">
+<span class="badge badge-attended">
+<span class="material-symbols-outlined text-xs"> verified </span>
+                            Attended
+                          </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-[#9eb7a8] hover:text-white">
+<span class="material-symbols-outlined"> more_vert </span>
+</button>
+</td>
+</tr>
+<tr class="border-b border-[#29382f] hover:bg-[#29382f]/50 transition-colors">
+<td class="px-6 py-4 font-medium text-white">Noah Carter</td>
+<td class="px-6 py-4 text-[#9eb7a8]">noah.carter@example.com</td>
+<td class="px-6 py-4 text-[#9eb7a8]">July 3, 2024</td>
+<td class="px-6 py-4">
+<span class="badge badge-confirmed">
+<span class="material-symbols-outlined text-xs"> check_circle </span>
+                            Confirmed
+                          </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-[#9eb7a8] hover:text-white">
+<span class="material-symbols-outlined"> more_vert </span>
+</button>
+</td>
+</tr>
+<tr class="border-b border-[#29382f] hover:bg-[#29382f]/50 transition-colors">
+<td class="px-6 py-4 font-medium text-white">Ava Mitchell</td>
+<td class="px-6 py-4 text-[#9eb7a8]">ava.mitchell@example.com</td>
+<td class="px-6 py-4 text-[#9eb7a8]">July 5, 2024</td>
+<td class="px-6 py-4">
+<span class="badge badge-attended">
+<span class="material-symbols-outlined text-xs"> verified </span>
+                            Attended
+                          </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-[#9eb7a8] hover:text-white">
+<span class="material-symbols-outlined"> more_vert </span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-[#29382f]/50 transition-colors">
+<td class="px-6 py-4 font-medium text-white">Liam Foster</td>
+<td class="px-6 py-4 text-[#9eb7a8]">liam.foster@example.com</td>
+<td class="px-6 py-4 text-[#9eb7a8]">July 7, 2024</td>
+<td class="px-6 py-4">
+<span class="badge badge-cancelled">
+<span class="material-symbols-outlined text-xs"> cancel </span>
+                            Cancelled
+                          </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-[#9eb7a8] hover:text-white">
+<span class="material-symbols-outlined"> more_vert </span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex items-center justify-between px-6 py-4 border-t border-[#29382f]">
+<span class="text-sm text-[#9eb7a8]">Showing 1 to 5 of 75 results</span>
+<div class="inline-flex items-center -space-x-px">
+<button class="px-3 py-2 leading-tight text-[#9eb7a8] bg-[#1c2620] border border-[#29382f] rounded-l-lg hover:bg-[#29382f] hover:text-white">Previous</button>
+<button class="px-3 py-2 leading-tight text-white bg-[#29382f] border border-[#29382f] hover:bg-[#34463c] hover:text-white">1</button>
+<button class="px-3 py-2 leading-tight text-[#9eb7a8] bg-[#1c2620] border border-[#29382f] hover:bg-[#29382f] hover:text-white">2</button>
+<button class="px-3 py-2 leading-tight text-[#9eb7a8] bg-[#1c2620] border border-[#29382f] rounded-r-lg hover:bg-[#29382f] hover:text-white">Next</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

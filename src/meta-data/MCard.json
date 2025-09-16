@@ -1,0 +1,165 @@
+{
+	"style":	null,
+	"props":	{
+		"id":	"MCard",
+		"window_type":	12,
+		"component_path":	"Members/MCard/",
+		"module_name":	"",
+		"component_uniquename":	"MCard_MCard"
+	},
+	"hint":	null,
+	"controlType":	null,
+	"children":	[
+		{
+			"style":	null,
+			"props":	{
+				"id":	"Member_ID",
+				"enabled":	{
+					"value":	null,
+					"has_exp":	true
+				},
+				"mgformat":	"mgFormat",
+				"format":	"##########",
+				"attribute":	"N",
+				"common_line_id":	"line12"
+			},
+			"hint":	null,
+			"controlType":	"T",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"P_pBtnVisibility",
+				"items_list":	"True,False",
+				"mgformat":	"mgFormat",
+				"validator":	"rangevalidator",
+				"format":	"XXXXX",
+				"attribute":	"B",
+				"common_line_id":	"line12"
+			},
+			"hint":	null,
+			"controlType":	"T",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"Combo_Title",
+				"must_input":	true,
+				"items_list":	"Mr, Ms, Mrs",
+				"attribute":	"A",
+				"common_line_id":	"line45"
+			},
+			"hint":	null,
+			"controlType":	"D",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"First_Name",
+				"must_input":	true,
+				"mgformat":	"mgFormat",
+				"format":	"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+				"attribute":	"A",
+				"common_line_id":	"line78"
+			},
+			"hint":	null,
+			"controlType":	"T",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"Last_Name",
+				"must_input":	true,
+				"mgformat":	"mgFormat",
+				"format":	"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+				"attribute":	"A",
+				"common_line_id":	"line111"
+			},
+			"hint":	null,
+			"controlType":	"T",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"Birth_Date",
+				"must_input":	true,
+				"mgformat":	"mgFormat",
+				"format":	"DD/MM/YYYY",
+				"attribute":	"D",
+				"common_line_id":	"line143"
+			},
+			"hint":	null,
+			"controlType":	"T",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"Combo_Gender",
+				"must_input":	true,
+				"items_list":	"Male, Female",
+				"attribute":	"A",
+				"common_line_id":	"line186"
+			},
+			"hint":	null,
+			"controlType":	"D",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"btnSave",
+				"enabled":	{
+					"value":	null,
+					"has_exp":	true
+				},
+				"button_style":	1,
+				"format":	"Save",
+				"common_line_id":	"line224"
+			},
+			"hint":	null,
+			"controlType":	"B",
+			"children":	null
+		},
+		{
+			"style":	{
+				"border":	true
+			},
+			"props":	{
+				"id":	"SubF_M_Contact",
+				"common_line_id":	"line261"
+			},
+			"hint":	null,
+			"controlType":	"F",
+			"children":	null
+		},
+		{
+			"style":	{
+				"border":	true
+			},
+			"props":	{
+				"id":	"SubFMEmail",
+				"common_line_id":	"line261"
+			},
+			"hint":	null,
+			"controlType":	"F",
+			"children":	null
+		},
+		{
+			"style":	null,
+			"props":	{
+				"id":	"btnQuit",
+				"format":	"CreateQuit",
+				"common_line_id":	"line321"
+			},
+			"hint":	null,
+			"controlType":	"B",
+			"children":	null
+		}
+	]
+}

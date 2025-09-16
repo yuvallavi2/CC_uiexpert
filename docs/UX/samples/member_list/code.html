@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Spline+Sans%3Awght%40400%3B500%3B700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style type="text/tailwindcss">
+      :root {
+        --primary-50: #f0fdf4;
+        --primary-100: #dcfce7;
+        --primary-200: #bbf7d0;
+        --primary-300: #86efac;
+        --primary-400: #4ade80;
+        --primary-500: #22c55e;
+        --primary-600: #16a34a;
+        --primary-700: #15803d;
+        --primary-800: #166534;
+        --primary-900: #14532d;
+        --primary-950: #052e16;
+      }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-100 font-sans">
+<div class="flex min-h-screen">
+<aside class="w-64 bg-gray-900 flex flex-col">
+<div class="flex items-center gap-3 h-16 px-6 border-b border-gray-800">
+<svg class="size-8 text-[var(--primary-500)]" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z" fill="currentColor"></path>
+</svg>
+<h1 class="text-xl font-bold">Eventit</h1>
+</div>
+<nav class="flex-1 p-4 space-y-2">
+<a class="flex items-center gap-3 px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+            Dashboard
+          </a>
+<a class="flex items-center gap-3 px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined">event</span>
+            Events
+          </a>
+<a class="flex items-center gap-3 px-4 py-2 text-sm font-medium rounded-md bg-[var(--primary-900)] text-[var(--primary-300)]" href="#">
+<span class="material-symbols-outlined">group</span>
+            Members
+          </a>
+<a class="flex items-center gap-3 px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined">groups</span>
+            Groups
+          </a>
+<a class="flex items-center gap-3 px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined">forum</span>
+            Communications
+          </a>
+<a class="flex items-center gap-3 px-4 py-2 text-sm font-medium rounded-md hover:bg-gray-800" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+            Reports
+          </a>
+</nav>
+</aside>
+<main class="flex-1 flex flex-col">
+<header class="flex items-center h-16 px-6 border-b border-gray-800">
+<div class="flex-1"></div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">search</span>
+<input class="form-input w-full pl-10 pr-4 py-2 bg-gray-800 border-gray-700 rounded-full focus:outline-none focus:ring-2 focus:ring-[var(--primary-500)]" placeholder="Search..." type="search"/>
+</div>
+<div class="size-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDoC7YZCVG2E39BXH41tZcrJIGlnQmXbfeHpDFCyLgs1Ski2nMIs91wMUMgrtFPIE5kr4Q5Uow7InBcS1QwvpaMDcO_zhItNmUwGwj1LiC06f7JDnAyVfDDPHsL0ECDR8Srxa3t5JdY_-Uzlc_SCmdj3i3WMpdg_H1ggKgmyQO-MQcwSkw4EoNVv-XrzCBx7IsGU_2sOBR6tOOCdfQWC-DbGChqTKl8TdYgzj8yYKjhzgz5vAkz4ir4hpOBaWyuP5KK-WMlx6dYBCH-");'></div>
+</div>
+</header>
+<div class="flex-1 p-8">
+<div class="max-w-7xl mx-auto">
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-3xl font-bold">Members</h2>
+<button class="flex items-center gap-2 px-4 py-2 bg-[var(--primary-500)] text-white font-semibold rounded-full hover:bg-[var(--primary-600)] transition-colors">
+<span class="material-symbols-outlined">add</span>
+                Add Member
+              </button>
+</div>
+<div class="bg-gray-900 rounded-xl">
+<div class="p-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-500">search</span>
+<input class="form-input w-full pl-10 pr-4 py-2 bg-gray-800 border-gray-700 rounded-full focus:outline-none focus:ring-2 focus:ring-[var(--primary-500)]" placeholder="Search members..." type="search"/>
+</div>
+<div class="relative">
+<button class="flex items-center justify-between w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-full hover:bg-gray-700">
+<span>Status</span>
+<span class="material-symbols-outlined">arrow_drop_down</span>
+</button>
+</div>
+<div class="relative">
+<button class="flex items-center justify-between w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-full hover:bg-gray-700">
+<span>Membership Type</span>
+<span class="material-symbols-outlined">arrow_drop_down</span>
+</button>
+</div>
+<div class="relative">
+<button class="flex items-center justify-between w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-full hover:bg-gray-700">
+<span>Joined Date</span>
+<span class="material-symbols-outlined">arrow_drop_down</span>
+</button>
+</div>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-sm text-left">
+<thead class="text-xs text-gray-400 uppercase bg-gray-800/50">
+<tr>
+<th class="px-6 py-3" scope="col">Name</th>
+<th class="px-6 py-3" scope="col">Email</th>
+<th class="px-6 py-3" scope="col">Membership ID</th>
+<th class="px-6 py-3" scope="col">Status</th>
+<th class="px-6 py-3 text-right" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-gray-800 hover:bg-gray-800/50">
+<td class="px-6 py-4 font-medium text-white">Sophia Carter</td>
+<td class="px-6 py-4 text-gray-400">sophia.carter@email.com</td>
+<td class="px-6 py-4 text-gray-400">MEM2023001</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 text-xs font-medium rounded-full bg-green-900 text-green-300">Active</span>
+</td>
+<td class="px-6 py-4 text-right">
+<a class="font-medium text-[var(--primary-400)] hover:underline mr-4" href="#">Edit</a>
+<a class="font-medium text-gray-400 hover:underline" href="#">View Profile</a>
+</td>
+</tr>
+<tr class="border-b border-gray-800 hover:bg-gray-800/50">
+<td class="px-6 py-4 font-medium text-white">Ethan Bennett</td>
+<td class="px-6 py-4 text-gray-400">ethan.bennett@email.com</td>
+<td class="px-6 py-4 text-gray-400">MEM2023002</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 text-xs font-medium rounded-full bg-green-900 text-green-300">Active</span>
+</td>
+<td class="px-6 py-4 text-right">
+<a class="font-medium text-[var(--primary-400)] hover:underline mr-4" href="#">Edit</a>
+<a class="font-medium text-gray-400 hover:underline" href="#">View Profile</a>
+</td>
+</tr>
+<tr class="border-b border-gray-800 hover:bg-gray-800/50">
+<td class="px-6 py-4 font-medium text-white">Olivia Hayes</td>
+<td class="px-6 py-4 text-gray-400">olivia.hayes@email.com</td>
+<td class="px-6 py-4 text-gray-400">MEM2023003</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 text-xs font-medium rounded-full bg-red-900 text-red-300">Inactive</span>
+</td>
+<td class="px-6 py-4 text-right">
+<a class="font-medium text-[var(--primary-400)] hover:underline mr-4" href="#">Edit</a>
+<a class="font-medium text-gray-400 hover:underline" href="#">View Profile</a>
+</td>
+</tr>
+<tr class="border-b border-gray-800 hover:bg-gray-800/50">
+<td class="px-6 py-4 font-medium text-white">Liam Foster</td>
+<td class="px-6 py-4 text-gray-400">liam.foster@email.com</td>
+<td class="px-6 py-4 text-gray-400">MEM2023004</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 text-xs font-medium rounded-full bg-green-900 text-green-300">Active</span>
+</td>
+<td class="px-6 py-4 text-right">
+<a class="font-medium text-[var(--primary-400)] hover:underline mr-4" href="#">Edit</a>
+<a class="font-medium text-gray-400 hover:underline" href="#">View Profile</a>
+</td>
+</tr>
+<tr class="border-b border-gray-800 hover:bg-gray-800/50">
+<td class="px-6 py-4 font-medium text-white">Ava Mitchell</td>
+<td class="px-6 py-4 text-gray-400">ava.mitchell@email.com</td>
+<td class="px-6 py-4 text-gray-400">MEM2023005</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 text-xs font-medium rounded-full bg-green-900 text-green-300">Active</span>
+</td>
+<td class="px-6 py-4 text-right">
+<a class="font-medium text-[var(--primary-400)] hover:underline mr-4" href="#">Edit</a>
+<a class="font-medium text-gray-400 hover:underline" href="#">View Profile</a>
+</td>
+</tr>
+<tr class="border-b border-gray-800 hover:bg-gray-800/50">
+<td class="px-6 py-4 font-medium text-white">Noah Parker</td>
+<td class="px-6 py-4 text-gray-400">noah.parker@email.com</td>
+<td class="px-6 py-4 text-gray-400">MEM2023006</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 text-xs font-medium rounded-full bg-red-900 text-red-300">Inactive</span>
+</td>
+<td class="px-6 py-4 text-right">
+<a class="font-medium text-[var(--primary-400)] hover:underline mr-4" href="#">Edit</a>
+<a class="font-medium text-gray-400 hover:underline" href="#">View Profile</a>
+</td>
+</tr>
+<tr class="border-b border-gray-800 hover:bg-gray-800/50">
+<td class="px-6 py-4 font-medium text-white">Isabella Reed</td>
+<td class="px-6 py-4 text-gray-400">isabella.reed@email.com</td>
+<td class="px-6 py-4 text-gray-400">MEM2023007</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 text-xs font-medium rounded-full bg-green-900 text-green-300">Active</span>
+</td>
+<td class="px-6 py-4 text-right">
+<a class="font-medium text-[var(--primary-400)] hover:underline mr-4" href="#">Edit</a>
+<a class="font-medium text-gray-400 hover:underline" href="#">View Profile</a>
+</td>
+</tr>
+<tr class="border-b border-gray-800 hover:bg-gray-800/50">
+<td class="px-6 py-4 font-medium text-white">Jackson Cole</td>
+<td class="px-6 py-4 text-gray-400">jackson.cole@email.com</td>
+<td class="px-6 py-4 text-gray-400">MEM2023008</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 text-xs font-medium rounded-full bg-green-900 text-green-300">Active</span>
+</td>
+<td class="px-6 py-4 text-right">
+<a class="font-medium text-[var(--primary-400)] hover:underline mr-4" href="#">Edit</a>
+<a class="font-medium text-gray-400 hover:underline" href="#">View Profile</a>
+</td>
+</tr>
+<tr class="border-b border-gray-800 hover:bg-gray-800/50">
+<td class="px-6 py-4 font-medium text-white">Mia Hughes</td>
+<td class="px-6 py-4 text-gray-400">mia.hughes@email.com</td>
+<td class="px-6 py-4 text-gray-400">MEM2023009</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 text-xs font-medium rounded-full bg-red-900 text-red-300">Inactive</span>
+</td>
+<td class="px-6 py-4 text-right">
+<a class="font-medium text-[var(--primary-400)] hover:underline mr-4" href="#">Edit</a>
+<a class="font-medium text-gray-400 hover:underline" href="#">View Profile</a>
+</td>
+</tr>
+<tr class="hover:bg-gray-800/50">
+<td class="px-6 py-4 font-medium text-white">Aiden Brooks</td>
+<td class="px-6 py-4 text-gray-400">aiden.brooks@email.com</td>
+<td class="px-6 py-4 text-gray-400">MEM2023010</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 text-xs font-medium rounded-full bg-green-900 text-green-300">Active</span>
+</td>
+<td class="px-6 py-4 text-right">
+<a class="font-medium text-[var(--primary-400)] hover:underline mr-4" href="#">Edit</a>
+<a class="font-medium text-gray-400 hover:underline" href="#">View Profile</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>
