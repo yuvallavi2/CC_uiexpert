@@ -37,7 +37,11 @@
       "Bash(npm install:*)",
       "Bash(node:*)",
       "Bash(npm init:*)",
-      "Bash(sudo npx playwright:*)"
+      "Bash(sudo npx playwright:*)",
+      "WebFetch(domain:www.anthropic.com)",
+      "Bash(npm run build:css:*)",
+      "Bash(npx tailwindcss:*)",
+      "Bash(npm uninstall:*)"
     ]
   },
   "enableAllProjectMcpServers": true,

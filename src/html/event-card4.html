@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Card</title>
+  <link rel="stylesheet" href="../css/tailwind-output.css">
+</head>
+<body class="min-h-screen bg-eventit-bg-primary p-6">
+  <div class="container-page mx-auto max-w-4xl">
+    <div class="card">
+      <h1 class="h1">Event Details</h1>
+
+      <form class="space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="Event_ID" class="block text-sm font-medium mb-2 text-gray-300">
+              Event ID
+            </label>
+            <input
+              type="text"
+              id="Event_ID"
+              name="Event_ID"
+              class="input"
+              placeholder="##########"
+              readonly
+              disabled
+            />
+          </div>
+
+          <div>
+            <label for="ComboEventType" class="block text-sm font-medium mb-2 text-gray-300">
+              Event Type <span class="text-eventit-danger">*</span>
+            </label>
+            <select
+              id="ComboEventType"
+              name="ComboEventType"
+              class="select"
+              required
+            >
+              <option value="">Select Event Type</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="Event_Name" class="block text-sm font-medium mb-2 text-gray-300">
+            Event Name
+          </label>
+          <input
+            type="text"
+            id="Event_Name"
+            name="Event_Name"
+            class="input"
+            placeholder="Enter event name (max 50 characters)"
+            maxlength="50"
+          />
+        </div>
+
+        <div>
+          <label for="ComboEventLocation" class="block text-sm font-medium mb-2 text-gray-300">
+            Event Location
+          </label>
+          <select
+            id="ComboEventLocation"
+            name="ComboEventLocation"
+            class="select"
+          >
+            <option value="">Select Location</option>
+          </select>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="Start_Date" class="block text-sm font-medium mb-2 text-gray-300">
+              Start Date <span class="text-eventit-danger">*</span>
+            </label>
+            <input
+              type="date"
+              id="Start_Date"
+              name="Start_Date"
+              class="input"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="End_Date" class="block text-sm font-medium mb-2 text-gray-300">
+              End Date <span class="text-eventit-danger">*</span>
+            </label>
+            <input
+              type="date"
+              id="End_Date"
+              name="End_Date"
+              class="input"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="EventStartTime" class="block text-sm font-medium mb-2 text-gray-300">
+              Start Time
+            </label>
+            <input
+              type="time"
+              id="EventStartTime"
+              name="EventStartTime"
+              class="input"
+            />
+          </div>
+
+          <div>
+            <label for="Event_Inforrmation_End_Time" class="block text-sm font-medium mb-2 text-gray-300">
+              End Time
+            </label>
+            <input
+              type="time"
+              id="Event_Inforrmation_End_Time"
+              name="Event_Inforrmation_End_Time"
+              class="input"
+            />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="Minimum_Attendees" class="block text-sm font-medium mb-2 text-gray-300">
+              Minimum Attendees
+            </label>
+            <input
+              type="number"
+              id="Minimum_Attendees"
+              name="Minimum_Attendees"
+              class="input"
+              placeholder="#####"
+              min="0"
+              max="99999"
+            />
+          </div>
+
+          <div>
+            <label for="Maximum_Attendees" class="block text-sm font-medium mb-2 text-gray-300">
+              Maximum Attendees
+            </label>
+            <input
+              type="number"
+              id="Maximum_Attendees"
+              name="Maximum_Attendees"
+              class="input"
+              placeholder="#####"
+              min="0"
+              max="99999"
+            />
+          </div>
+        </div>
+
+        <div class="border-t border-gray-600 pt-6">
+          <h2 class="h2">Registered Members</h2>
+          <div class="card--soft">
+            <p class="text-gray-300 italic">
+              [Registered Members List - Wireframe Placeholder]
+            </p>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-4 flex-wrap">
+          <button
+            type="submit"
+            id="btnSave"
+            class="btn btn-primary"
+          >
+            Save
+          </button>
+
+          <button
+            type="button"
+            id="btnQuit"
+            class="btn btn-ghost"
+          >
+            CreateQuit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
