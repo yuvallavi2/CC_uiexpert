@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Style Guide</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../design-tokens.css">
+  <style> body{background:var(--color-background); color:var(--color-foreground); font-family:var(--font-sans);} </style>
+</head>
+<body class="rtl p-6">
+
+<h1 class="heading mb-4">מדריך סגנון - תצוגה</h1>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+  <div class="card"><div class="font-medium mb-2">Primary</div><div class="h-10 rounded" style="background:var(--color-primary)"></div><div class="text-sm mt-2">#fefeff</div></div>
+  <div class="card"><div class="font-medium mb-2">Secondary</div><div class="h-10 rounded" style="background:var(--color-secondary)"></div><div class="text-sm mt-2">#fcfdfe</div></div>
+  <div class="card"><div class="font-medium mb-2">Info</div><div class="h-10 rounded" style="background:var(--color-info)"></div><div class="text-sm mt-2">#fcfdfd</div></div>
+  <div class="card"><div class="font-medium mb-2">Success</div><div class="h-10 rounded" style="background:var(--color-success)"></div><div class="text-sm mt-2">#f8f9fa</div></div>
+  <div class="card"><div class="font-medium mb-2">Warning</div><div class="h-10 rounded" style="background:var(--color-warning)"></div><div class="text-sm mt-2">#d8d9db</div></div>
+  <div class="card"><div class="font-medium mb-2">Danger</div><div class="h-10 rounded" style="background:var(--color-danger)"></div><div class="text-sm mt-2">#97a294</div></div>
+</div>
+
+<div class="card mb-8">
+  <div class="text-lg font-semibold mb-2">כפתורים</div>
+  <div class="space-x-2 space-x-reverse">
+    <button class="btn-primary">ראשי</button>
+    <button class="btn-secondary">משני</button>
+    <button class="btn-ghost">רוח</button>
+  </div>
+</div>
+
+<div class="card mb-8">
+  <div class="text-lg font-semibold mb-2">תגיות</div>
+  <div class="space-x-2 space-x-reverse">
+    <span class="badge-info">בקרוב</span>
+    <span class="badge-success">פעיל</span>
+    <span class="badge-warning">אזהרה</span>
+    <span class="badge-danger">בוטל</span>
+  </div>
+</div>
+
+<div class="card">
+  <div class="text-lg font-semibold mb-2">טופס</div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <label>שם <input class="input" placeholder="שם מלא"/></label>
+    <label>אימייל <input class="input" placeholder="name@example.com"/></label>
+    <label>טלפון <input class="input" placeholder="050-0000000"/></label>
+    <label>תאריך <input type="date" class="input"/></label>
+  </div>
+</div>
+
+</body>
+</html>

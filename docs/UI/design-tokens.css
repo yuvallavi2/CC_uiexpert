@@ -1,0 +1,51 @@
+/* Light Mode (Default) */
+:root,
+:root.light {
+  --color-primary: #fefeff;
+  --color-secondary: #fcfdfe;
+  --color-info: #fcfdfd;
+  --color-success: #f8f9fa;
+  --color-warning: #d8d9db;
+  --color-danger: #97a294;
+  --color-foreground: #0f172a;
+  --color-background: #f8fafc;
+  --color-muted: #94a3b8;
+  --color-border: #e2e8f0;
+  --color-card: #ffffff;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 10px rgba(0,0,0,0.06);
+  --shadow-lg: 0 10px 25px rgba(0,0,0,0.10);
+
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-3: 0.75rem;
+  --spacing-4: 1rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+
+  --font-sans: "Heebo", "Assistant", "Segoe UI", "Inter", system-ui, -apple-system, Arial, sans-serif;
+}
+
+/* Dark Mode */
+:root.dark {
+  --color-primary: #1e293b;
+  --color-secondary: #334155;
+  --color-info: #475569;
+  --color-success: #22c55e;
+  --color-warning: #eab308;
+  --color-danger: #ef4444;
+  --color-foreground: #f1f5f9;
+  --color-background: #0f172a;
+  --color-muted: #64748b;
+  --color-border: #334155;
+  --color-card: #1e293b;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 10px rgba(0,0,0,0.4);
+  --shadow-lg: 0 10px 25px rgba(0,0,0,0.5);
+}

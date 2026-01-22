@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="he" dir="rtl" class="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Event Card</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../docs/UI/design-tokens.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    body {
+      background: var(--color-background);
+      color: var(--color-foreground);
+      font-family: var(--font-sans);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Theme Toggle Button Styles */
+    .theme-toggle {
+      position: fixed;
+      top: 1.5rem;
+      left: 1.5rem;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-1px);
+    }
+
+    .theme-toggle-icon {
+      width: 1.25rem;
+      height: 1.25rem;
+      color: var(--color-foreground);
+    }
+
+    .theme-toggle-text {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-foreground);
+    }
+  </style>
+</head>
+<body class="rtl p-6">
+
+  <div class="max-w-5xl mx-auto">
+    <div class="card">
+      <h1 class="heading mb-6">כרטיס אירוע</h1>
+
+      <form class="space-y-6">
+
+        <!-- Event ID (Read-only field) -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <label class="block">
+            <span class="block text-sm font-medium mb-1 text-foreground">מזהה אירוע</span>
+            <input
+              type="text"
+              id="Event_ID"
+              name="Event_ID"
+              data-field-id="Event_ID"
+              data-control-type="T"
+              data-format="##########"
+              data-attribute="N"
+              class="input bg-slate-50 text-muted"
+              placeholder="##########"
+              maxlength="10"
+              disabled
+              aria-label="Event ID"
+            />
+          </label>
+        </div>
+
+        <!-- Event Type and Event Name -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <label class="block">
+            <span class="block text-sm font-medium mb-1 text-foreground">
+              סוג אירוע <span class="text-red-500" aria-label="Required">*</span>
+            </span>
+            <select
+              id="ComboEventType"
+              name="ComboEventType"
+              data-field-id="ComboEventType"
+              data-control-type="D"
+              data-attribute="N"
+              data-required="true"
+              class="input"
+              required
+              aria-label="Event Type"
+              aria-required="true"
+            >
+              <option value="">בחר סוג אירוע</option>
+            </select>
+          </label>
+
+          <label class="block">
+            <span class="block text-sm font-medium mb-1 text-foreground">שם אירוע</span>
+            <input
+              type="text"
+              id="Event_Name"
+              name="Event_Name"
+              data-field-id="Event_Name"
+              data-control-type="T"
+              data-format="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+              data-attribute="A"
+              class="input"
+              maxlength="50"
+              aria-label="Event Name"
+            />
+          </label>
+        </div>
+
+        <!-- Event Location -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <label class="block">
+            <span class="block text-sm font-medium mb-1 text-foreground">מיקום אירוע</span>
+            <select
+              id="ComboEventLocation"
+              name="ComboEventLocation"
+              data-field-id="ComboEventLocation"
+              data-control-type="D"
+              data-attribute="N"
+              class="input"
+              aria-label="Event Location"
+            >
+              <option value="">בחר מיקום</option>
+            </select>
+          </label>
+        </div>
+
+        <!-- Date Section: Start Date and End Date -->
+        <div class="space-y-2">
+          <h2 class="text-base font-semibold text-foreground">תאריכים</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <label class="block">
+              <span class="block text-sm font-medium mb-1 text-foreground">
+                תאריך התחלה <span class="text-red-500" aria-label="Required">*</span>
+              </span>
+              <input
+                type="date"
+                id="Start_Date"
+                name="Start_Date"
+                data-field-id="Start_Date"
+                data-control-type="T"
+                data-format="DD/MM/YYYY"
+                data-attribute="D"
+                data-required="true"
+                class="input"
+                required
+                aria-label="Start Date"
+                aria-required="true"
+              />
+            </label>
+
+            <label class="block">
+              <span class="block text-sm font-medium mb-1 text-foreground">
+                תאריך סיום <span class="text-red-500" aria-label="Required">*</span>
+              </span>
+              <input
+                type="date"
+                id="End_Date"
+                name="End_Date"
+                data-field-id="End_Date"
+                data-control-type="T"
+                data-format="DD/MM/YYYY"
+                data-attribute="D"
+                data-required="true"
+                class="input"
+                required
+                aria-label="End Date"
+                aria-required="true"
+              />
+            </label>
+          </div>
+        </div>
+
+        <!-- Time Section: Start Time and End Time -->
+        <div class="space-y-2">
+          <h2 class="text-base font-semibold text-foreground">שעות</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <label class="block">
+              <span class="block text-sm font-medium mb-1 text-foreground">שעת התחלה</span>
+              <input
+                type="time"
+                id="EventStartTime"
+                name="EventStartTime"
+                data-field-id="EventStartTime"
+                data-control-type="T"
+                data-format="HH:MM"
+                data-attribute="T"
+                class="input"
+                aria-label="Event Start Time"
+              />
+            </label>
+
+            <label class="block">
+              <span class="block text-sm font-medium mb-1 text-foreground">שעת סיום</span>
+              <input
+                type="time"
+                id="Event_Inforrmation_End_Time"
+                name="Event_Inforrmation_End_Time"
+                data-field-id="Event_Inforrmation_End_Time"
+                data-control-type="T"
+                data-format="HH:MM"
+                data-attribute="T"
+                class="input"
+                aria-label="Event End Time"
+              />
+            </label>
+          </div>
+        </div>
+
+        <!-- Attendees Section: Minimum and Maximum -->
+        <div class="space-y-2">
+          <h2 class="text-base font-semibold text-foreground">משתתפים</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <label class="block">
+              <span class="block text-sm font-medium mb-1 text-foreground">מינימום משתתפים</span>
+              <input
+                type="number"
+                id="Minimum_Attendees"
+                name="Minimum_Attendees"
+                data-field-id="Minimum_Attendees"
+                data-control-type="T"
+                data-format="#####"
+                data-attribute="N"
+                class="input"
+                placeholder="0"
+                min="0"
+                max="99999"
+                aria-label="Minimum Attendees"
+              />
+            </label>
+
+            <label class="block">
+              <span class="block text-sm font-medium mb-1 text-foreground">מקסימום משתתפים</span>
+              <input
+                type="number"
+                id="Maximum_Attendees"
+                name="Maximum_Attendees"
+                data-field-id="Maximum_Attendees"
+                data-control-type="T"
+                data-format="#####"
+                data-attribute="N"
+                class="input"
+                placeholder="0"
+                min="0"
+                max="99999"
+                aria-label="Maximum Attendees"
+              />
+            </label>
+          </div>
+        </div>
+
+        <!-- Registered Members SubForm (Wireframe) -->
+        <div class="space-y-2">
+          <h2 class="text-base font-semibold text-foreground">חברים רשומים</h2>
+          <div
+            id="SfRegisteredMembers"
+            data-field-id="SfRegisteredMembers"
+            data-control-type="F"
+            class="border-2 border-dashed border-border rounded-lg p-8 bg-slate-50 text-center"
+          >
+            <div class="text-muted">
+              <svg
+                class="mx-auto h-12 w-12 mb-3"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                />
+              </svg>
+              <div class="text-base font-medium mb-1">רשימת חברים רשומים</div>
+              <div class="text-sm">[ SubForm: SfRegisteredMembers ]</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hidden Field for Button Visibility Control -->
+        <input
+          type="hidden"
+          id="P_pBtnVisibility"
+          name="P_pBtnVisibility"
+          data-field-id="P_pBtnVisibility"
+          data-control-type="T"
+          data-attribute="B"
+        />
+
+        <!-- Action Buttons -->
+        <div class="flex gap-3 justify-end pt-4 border-t border-border">
+          <button
+            type="button"
+            id="btnQuit"
+            data-field-id="btnQuit"
+            data-control-type="B"
+            data-format="CreateQuit"
+            class="btn-ghost"
+            aria-label="Quit"
+          >
+            ביטול
+          </button>
+
+          <button
+            type="submit"
+            id="btnSave"
+            data-field-id="btnSave"
+            data-control-type="B"
+            data-format="Save"
+            class="btn-primary"
+            aria-label="Save Event"
+          >
+            שמור
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- Theme Toggle Button -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+    <svg class="theme-toggle-icon" id="sunIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+    </svg>
+    <svg class="theme-toggle-icon" id="moonIcon" style="display: none;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+    </svg>
+    <span class="theme-toggle-text" id="themeText">מצב בהיר</span>
+  </button>
+
+  <script>
+    // Theme Toggle Functionality
+    const html = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const sunIcon = document.getElementById('sunIcon');
+    const moonIcon = document.getElementById('moonIcon');
+    const themeText = document.getElementById('themeText');
+
+    // Check for saved theme preference or default to 'light'
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    html.classList.remove('light', 'dark');
+    html.classList.add(currentTheme);
+    updateThemeUI(currentTheme);
+
+    // Toggle theme on button click
+    themeToggle.addEventListener('click', () => {
+      const newTheme = html.classList.contains('light') ? 'dark' : 'light';
+      html.classList.remove('light', 'dark');
+      html.classList.add(newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeUI(newTheme);
+    });
+
+    // Update UI based on current theme
+    function updateThemeUI(theme) {
+      if (theme === 'dark') {
+        sunIcon.style.display = 'none';
+        moonIcon.style.display = 'block';
+        themeText.textContent = 'מצב כהה';
+      } else {
+        sunIcon.style.display = 'block';
+        moonIcon.style.display = 'none';
+        themeText.textContent = 'מצב בהיר';
+      }
+    }
+  </script>
+
+</body>
+</html>

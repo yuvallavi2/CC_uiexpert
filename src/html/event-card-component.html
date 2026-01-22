@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Event Card Component</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../css/design-tokens.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'Roboto', 'system-ui', 'sans-serif']
+          },
+          colors: {
+            eventit: {
+              bg: {
+                primary: '#0F172A',
+                secondary: '#1F2937',
+                hover: '#273244'
+              },
+              text: {
+                primary: '#FFFFFF',
+                secondary: '#9CA3AF',
+                placeholder: '#6B7280'
+              },
+              border: '#374151',
+              primary: '#22C55E',
+              primaryHover: '#16A34A',
+              info: '#2563EB',
+              success: '#22C55E',
+              danger: '#DC2626',
+              warning: '#F59E0B'
+            }
+          },
+          borderRadius: {
+            sm: '6px',
+            md: '8px',
+            lg: '12px'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background: var(--color-background, #f8fafc);
+      color: var(--color-foreground, #0f172a);
+      font-family: var(--font-sans, "Inter", system-ui, sans-serif);
+    }
+
+    .card {
+      background-color: var(--color-card, #ffffff);
+      border-radius: var(--radius-md, 10px);
+      padding: 1.5rem;
+      border: 1px solid var(--color-border, #e2e8f0);
+      box-shadow: var(--shadow-md, 0 4px 10px rgba(0,0,0,0.06));
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      border-radius: var(--radius-md, 8px);
+      padding: 0.5rem 1rem;
+      font-weight: 500;
+      transition: all 0.15s ease;
+      line-height: 1.25rem;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: #22C55E;
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: #16A34A;
+    }
+
+    .btn-secondary {
+      background-color: #6B7280;
+      color: #ffffff;
+    }
+
+    .btn-secondary:hover {
+      background-color: #4B5563;
+    }
+
+    .input,
+    .select {
+      width: 100%;
+      background-color: var(--color-card, #ffffff);
+      color: var(--color-foreground, #0f172a);
+      border-radius: var(--radius-md, 8px);
+      border: 1px solid var(--color-border, #e2e8f0);
+      padding: 0.5rem 0.75rem;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+
+    .input:focus,
+    .select:focus {
+      outline: none;
+      border-color: #22C55E;
+      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+    }
+
+    .input::placeholder {
+      color: var(--color-muted, #94a3b8);
+    }
+
+    .label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 500;
+      margin-bottom: 0.375rem;
+      color: var(--color-foreground, #0f172a);
+    }
+
+    .required::after {
+      content: " *";
+      color: #DC2626;
+    }
+
+    .subform-wireframe {
+      border: 2px dashed var(--color-border, #e2e8f0);
+      border-radius: var(--radius-md, 10px);
+      padding: 2rem;
+      text-align: center;
+      background-color: var(--color-background, #f8fafc);
+      color: var(--color-muted, #94a3b8);
+    }
+
+    .section-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--color-foreground, #0f172a);
+      border-bottom: 2px solid var(--color-border, #e2e8f0);
+      padding-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body class="p-6">
+
+  <!-- Event Card Component -->
+  <div class="max-w-4xl mx-auto">
+    <div class="card">
+
+      <!-- Event ID (Read-only/Hidden field) -->
+      <input
+        type="hidden"
+        id="Event_ID"
+        name="Event_ID"
+      />
+
+      <!-- Visibility Toggle (Hidden Boolean field) -->
+      <input
+        type="hidden"
+        id="P_pBtnVisibility"
+        name="P_pBtnVisibility"
+      />
+
+      <!-- Header Section -->
+      <div class="mb-6">
+        <h2 class="text-2xl font-bold text-gray-900">Event Details</h2>
+        <p class="text-sm text-gray-500 mt-1">Create or edit event information</p>
+      </div>
+
+      <!-- Event Basic Information Section -->
+      <div class="mb-6">
+        <h3 class="section-title">Basic Information</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+          <!-- Event Name -->
+          <div class="md:col-span-2">
+            <label for="Event_Name" class="label">
+              Event Name
+            </label>
+            <input
+              type="text"
+              id="Event_Name"
+              name="Event_Name"
+              class="input"
+              placeholder="Enter event name"
+              maxlength="50"
+            />
+          </div>
+
+          <!-- Event Type -->
+          <div>
+            <label for="ComboEventType" class="label required">
+              Event Type
+            </label>
+            <select
+              id="ComboEventType"
+              name="ComboEventType"
+              class="select"
+              required
+            >
+              <option value="">Select event type</option>
+              <option value="1">Conference</option>
+              <option value="2">Workshop</option>
+              <option value="3">Seminar</option>
+              <option value="4">Meetup</option>
+              <option value="5">Webinar</option>
+            </select>
+          </div>
+
+          <!-- Event Location -->
+          <div>
+            <label for="ComboEventLocation" class="label">
+              Event Location
+            </label>
+            <select
+              id="ComboEventLocation"
+              name="ComboEventLocation"
+              class="select"
+            >
+              <option value="">Select location</option>
+              <option value="1">Main Hall</option>
+              <option value="2">Conference Room A</option>
+              <option value="3">Conference Room B</option>
+              <option value="4">Outdoor Space</option>
+              <option value="5">Virtual</option>
+            </select>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Date and Time Section -->
+      <div class="mb-6">
+        <h3 class="section-title">Schedule</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+          <!-- Start Date -->
+          <div>
+            <label for="Start_Date" class="label required">
+              Start Date
+            </label>
+            <input
+              type="text"
+              id="Start_Date"
+              name="Start_Date"
+              class="input"
+              placeholder="DD/MM/YYYY"
+              pattern="\d{2}/\d{2}/\d{4}"
+              required
+            />
+          </div>
+
+          <!-- End Date -->
+          <div>
+            <label for="End_Date" class="label required">
+              End Date
+            </label>
+            <input
+              type="text"
+              id="End_Date"
+              name="End_Date"
+              class="input"
+              placeholder="DD/MM/YYYY"
+              pattern="\d{2}/\d{2}/\d{4}"
+              required
+            />
+          </div>
+
+          <!-- Start Time -->
+          <div>
+            <label for="EventStartTime" class="label">
+              Start Time
+            </label>
+            <input
+              type="text"
+              id="EventStartTime"
+              name="EventStartTime"
+              class="input"
+              placeholder="HH:MM"
+              pattern="\d{2}:\d{2}"
+            />
+          </div>
+
+          <!-- End Time -->
+          <div>
+            <label for="Event_Inforrmation_End_Time" class="label">
+              End Time
+            </label>
+            <input
+              type="text"
+              id="Event_Inforrmation_End_Time"
+              name="Event_Inforrmation_End_Time"
+              class="input"
+              placeholder="HH:MM"
+              pattern="\d{2}:\d{2}"
+            />
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Attendees Section -->
+      <div class="mb-6">
+        <h3 class="section-title">Capacity</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+          <!-- Minimum Attendees -->
+          <div>
+            <label for="Minimum_Attendees" class="label">
+              Minimum Attendees
+            </label>
+            <input
+              type="text"
+              id="Minimum_Attendees"
+              name="Minimum_Attendees"
+              class="input"
+              placeholder="0"
+              pattern="\d{0,5}"
+              maxlength="5"
+            />
+          </div>
+
+          <!-- Maximum Attendees -->
+          <div>
+            <label for="Maximum_Attendees" class="label">
+              Maximum Attendees
+            </label>
+            <input
+              type="text"
+              id="Maximum_Attendees"
+              name="Maximum_Attendees"
+              class="input"
+              placeholder="0"
+              pattern="\d{0,5}"
+              maxlength="5"
+            />
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Registered Members SubForm (Wireframe) -->
+      <div class="mb-6">
+        <h3 class="section-title">Registered Members</h3>
+        <div id="SfRegisteredMembers" class="subform-wireframe">
+          <svg
+            class="mx-auto h-12 w-12 text-gray-400"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+            />
+          </svg>
+          <p class="mt-2 text-sm font-medium">Registered Members SubForm</p>
+          <p class="text-xs mt-1">Member registration list will appear here</p>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row gap-3 justify-end pt-4 border-t border-gray-200">
+        <button
+          type="button"
+          id="btnQuit"
+          class="btn btn-secondary"
+        >
+          Quit
+        </button>
+        <button
+          type="submit"
+          id="btnSave"
+          class="btn btn-primary"
+        >
+          Save
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

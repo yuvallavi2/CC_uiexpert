@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../design-tokens.css">
+  <style> body{background:var(--color-background); color:var(--color-foreground); font-family:var(--font-sans);} </style>
+</head>
+<body class="rtl p-6">
+
+<h1 class="heading mb-6">לוח מחוונים</h1>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-6">
+  <div class="card"><div class="text-sm text-muted-foreground">קבוצות פעילות</div><div class="text-3xl font-bold mt-2">8</div></div>
+  <div class="card"><div class="text-sm text-muted-foreground">אירועים קרובים</div><div class="text-3xl font-bold mt-2">15</div></div>
+  <div class="card"><div class="text-sm text-muted-foreground">סה"כ חברים</div><div class="text-3xl font-bold mt-2">250</div></div>
+</div>
+<div class="card mb-6">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+    <img src="../images/screen-1.png" class="rounded-md shadow-sm col-span-1">
+    <div class="col-span-2">
+      <div class="text-xl font-semibold mb-2">מפגש קהילתי</div>
+      <p class="mb-4 text-sm text-slate-600">הצטרפו אלינו למפגש הקהילתי החודשי שלנו בפארק המקומי.</p>
+      <button class="btn-primary">הצג פרטים</button>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="text-lg font-semibold mb-2">פעילות חברים אחרונה</div>
+  <ul class="divide-y" style="border-color:var(--color-border)">
+    <li class="py-2 flex items-center justify-between"><span>סופיה מילד</span><span class="text-sm text-slate-500">הצטרפה לקהילה</span></li>
+    <li class="py-2 flex items-center justify-between"><span>איתן בנט</span><span class="text-sm text-slate-500">אישר תשלום</span></li>
+    <li class="py-2 flex items-center justify-between"><span>אוליביה הייז</span><span class="text-sm text-slate-500">הצטרפה לקהילה</span></li>
+  </ul>
+</div>
+
+</body>
+</html>

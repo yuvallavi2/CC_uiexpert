@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Members Table</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../design-tokens.css">
+  <style> body{background:var(--color-background); color:var(--color-foreground); font-family:var(--font-sans);} </style>
+</head>
+<body class="rtl p-6">
+
+<h1 class="heading mb-6">חברים</h1>
+<div class="card">
+  <div class="flex items-center gap-2 mb-4">
+    <button class="btn-primary">הוסף חבר +</button>
+    <input class="input max-w-sm" placeholder="חפש לפי שם או אימייל" />
+  </div>
+  <table class="table">
+    <thead>
+      <tr class="text-right text-slate-500">
+        <th class="px-4 py-2">שם</th>
+        <th class="px-4 py-2">איש קשר</th>
+        <th class="px-4 py-2">מזהה חבר</th>
+        <th class="px-4 py-2">סטטוס</th>
+        <th class="px-4 py-2">סוג חברות</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="bg-card shadow-sm">
+        <td class="px-4 py-3">סופיה קרטר</td>
+        <td class="px-4 py-3">sophia.carter@email.com</td>
+        <td class="px-4 py-3">M12345</td>
+        <td class="px-4 py-3"><span class="badge-success">פעיל</span></td>
+        <td class="px-4 py-3"><span class="badge-info">פרימיום</span></td>
+      </tr>
+      <tr class="bg-card shadow-sm">
+        <td class="px-4 py-3">אית'ן בנט</td>
+        <td class="px-4 py-3">ethan.bennett@email.com</td>
+        <td class="px-4 py-3">M67890</td>
+        <td class="px-4 py-3"><span class="badge-success">פעיל</span></td>
+        <td class="px-4 py-3"><span class="badge-info">רגיל</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

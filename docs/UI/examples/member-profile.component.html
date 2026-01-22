@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Member Profile</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../design-tokens.css">
+  <style> body{background:var(--color-background); color:var(--color-foreground); font-family:var(--font-sans);} </style>
+</head>
+<body class="rtl p-6">
+
+<h1 class="heading mb-6">פרופיל חבר</h1>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+  <div class="lg:col-span-2 space-y-4">
+    <div class="card">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <label>שם פרטי<input class="input" value="סופיה"/></label>
+        <label>שם משפחה<input class="input" value="קרטר"/></label>
+        <label>אימייל<input class="input" value="sophia.carter@email.com"/></label>
+        <label>טלפון<input class="input" value="(555) 123-4567"/></label>
+        <label class="md:col-span-2">כתובת<input class="input" value="רחוב מייפל 123, אוסטין, ארה"ב"/></label>
+      </div>
+    </div>
+    <div class="card">
+      <div class="font-medium mb-2">השתתפות באירועים</div>
+      <ul class="space-y-2 text-sm">
+        <li>ניקיון קהילתי — 2023-04-22</li>
+        <li>נשף קיץ — 2023-06-15</li>
+        <li>פיקניק קיץ — 2023-08-10</li>
+      </ul>
+    </div>
+  </div>
+  <aside class="sidebar">
+    <div class="text-center">
+      <div class="w-24 h-24 rounded-full bg-slate-300 mx-auto mb-2"></div>
+      <div class="font-semibold">סופיה קרטר</div>
+      <div class="text-sm text-slate-500">חברה מאז 2022</div>
+    </div>
+    <div class="mt-4 text-sm space-y-1">
+      <div>סטטוס: <span class="badge-success">פעיל</span></div>
+      <div>סוג: <span class="badge-info">פרימיום</span></div>
+    </div>
+  </aside>
+</div>
+
+</body>
+</html>

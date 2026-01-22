@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Card Component</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../docs/UI/design-tokens.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            eventit: {
+              bg: {
+                primary: '#0F172A',
+                secondary: '#1F2937',
+                hover: '#273244',
+              },
+              text: {
+                primary: '#FFFFFF',
+                secondary: '#9CA3AF',
+                placeholder: '#6B7280',
+              },
+              border: '#374151',
+              primary: '#22C55E',
+              primaryHover: '#16A34A',
+              info: '#2563EB',
+              success: '#22C55E',
+              danger: '#DC2626',
+              warning: '#F59E0B',
+            },
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    body {
+      background: var(--color-background);
+      color: var(--color-foreground);
+      font-family: var(--font-sans);
+    }
+  </style>
+</head>
+<body class="p-6">
+
+  <div class="card max-w-4xl mx-auto bg-white rounded-lg shadow-md p-6">
+    <header class="mb-6">
+      <h1 class="text-2xl font-semibold text-gray-900">Event Details</h1>
+    </header>
+
+    <form id="eventCardForm" class="space-y-6">
+      <!-- Event ID (Hidden/Read-only) -->
+      <div>
+        <label
+          for="Event_ID"
+          class="block text-sm font-medium text-gray-700 mb-1">
+          Event ID
+        </label>
+        <input
+          type="text"
+          id="Event_ID"
+          name="Event_ID"
+          class="input w-full bg-gray-100 border border-gray-300 rounded-md px-3 py-2 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+          pattern="[0-9]{1,10}"
+          maxlength="10"
+          readonly
+          placeholder="Auto-generated">
+      </div>
+
+      <!-- Event Type (Required) -->
+      <div>
+        <label
+          for="ComboEventType"
+          class="block text-sm font-medium text-gray-700 mb-1">
+          Event Type
+          <span class="text-red-600">*</span>
+        </label>
+        <select
+          id="ComboEventType"
+          name="ComboEventType"
+          class="input w-full bg-white border border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+          required>
+          <option value="">Select event type</option>
+        </select>
+      </div>
+
+      <!-- Event Name -->
+      <div>
+        <label
+          for="Event_Name"
+          class="block text-sm font-medium text-gray-700 mb-1">
+          Event Name
+        </label>
+        <input
+          type="text"
+          id="Event_Name"
+          name="Event_Name"
+          class="input w-full bg-white border border-gray-300 rounded-md px-3 py-2 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+          maxlength="50"
+          placeholder="Enter event name">
+      </div>
+
+      <!-- Event Location -->
+      <div>
+        <label
+          for="ComboEventLocation"
+          class="block text-sm font-medium text-gray-700 mb-1">
+          Event Location
+        </label>
+        <select
+          id="ComboEventLocation"
+          name="ComboEventLocation"
+          class="input w-full bg-white border border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+          <option value="">Select location</option>
+        </select>
+      </div>
+
+      <!-- Date Fields -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label
+            for="Start_Date"
+            class="block text-sm font-medium text-gray-700 mb-1">
+            Start Date
+            <span class="text-red-600">*</span>
+          </label>
+          <input
+            type="date"
+            id="Start_Date"
+            name="Start_Date"
+            class="input w-full bg-white border border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+            required>
+        </div>
+
+        <div>
+          <label
+            for="End_Date"
+            class="block text-sm font-medium text-gray-700 mb-1">
+            End Date
+            <span class="text-red-600">*</span>
+          </label>
+          <input
+            type="date"
+            id="End_Date"
+            name="End_Date"
+            class="input w-full bg-white border border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+            required>
+        </div>
+      </div>
+
+      <!-- Time Fields -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label
+            for="EventStartTime"
+            class="block text-sm font-medium text-gray-700 mb-1">
+            Start Time
+          </label>
+          <input
+            type="time"
+            id="EventStartTime"
+            name="EventStartTime"
+            class="input w-full bg-white border border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+        </div>
+
+        <div>
+          <label
+            for="Event_Inforrmation_End_Time"
+            class="block text-sm font-medium text-gray-700 mb-1">
+            End Time
+          </label>
+          <input
+            type="time"
+            id="Event_Inforrmation_End_Time"
+            name="Event_Inforrmation_End_Time"
+            class="input w-full bg-white border border-gray-300 rounded-md px-3 py-2 text-gray-900 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent">
+        </div>
+      </div>
+
+      <!-- Attendees Fields -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label
+            for="Minimum_Attendees"
+            class="block text-sm font-medium text-gray-700 mb-1">
+            Minimum Attendees
+          </label>
+          <input
+            type="number"
+            id="Minimum_Attendees"
+            name="Minimum_Attendees"
+            class="input w-full bg-white border border-gray-300 rounded-md px-3 py-2 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+            min="0"
+            max="99999"
+            placeholder="0">
+        </div>
+
+        <div>
+          <label
+            for="Maximum_Attendees"
+            class="block text-sm font-medium text-gray-700 mb-1">
+            Maximum Attendees
+          </label>
+          <input
+            type="number"
+            id="Maximum_Attendees"
+            name="Maximum_Attendees"
+            class="input w-full bg-white border border-gray-300 rounded-md px-3 py-2 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+            min="0"
+            max="99999"
+            placeholder="0">
+        </div>
+      </div>
+
+      <!-- Registered Members Subform Wireframe -->
+      <div class="border border-gray-300 rounded-lg p-6 bg-gray-50">
+        <h3 class="text-lg font-semibold text-gray-900 mb-3">
+          Registered Members
+        </h3>
+        <div class="bg-white border border-gray-200 rounded-md p-4">
+          <div class="flex items-center gap-3 text-gray-600">
+            <div class="w-4 h-4 bg-gray-400 rounded-full"></div>
+            <span class="text-sm">Subform: Registered Members List</span>
+          </div>
+          <div class="ml-7 mt-2 text-sm text-gray-500">
+            This section displays member registration details and status
+          </div>
+        </div>
+      </div>
+
+      <!-- Hidden Field (P_pBtnVisibility) -->
+      <input
+        type="hidden"
+        id="P_pBtnVisibility"
+        name="P_pBtnVisibility"
+        value="True">
+
+      <!-- Action Buttons -->
+      <div class="flex justify-end gap-3 pt-4 border-t border-gray-200">
+        <button
+          type="button"
+          id="btnQuit"
+          class="btn px-6 py-2 border border-gray-300 rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-green-500 transition-colors">
+          Cancel
+        </button>
+        <button
+          type="submit"
+          id="btnSave"
+          class="btn px-6 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-colors">
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>

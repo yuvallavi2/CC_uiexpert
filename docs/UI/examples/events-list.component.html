@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Events List</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../design-tokens.css">
+  <style> body{background:var(--color-background); color:var(--color-foreground); font-family:var(--font-sans);} </style>
+</head>
+<body class="rtl p-6">
+
+<h1 class="heading mb-6">אירועים</h1>
+<div class="card">
+  <div class="flex items-center gap-2 mb-4">
+    <button class="btn-primary">אירוע חדש +</button>
+    <input class="input max-w-sm" placeholder="חפש אירועים..." />
+  </div>
+  <table class="table">
+    <thead>
+      <tr class="text-right text-slate-500">
+        <th class="px-4 py-2">שם אירוע</th>
+        <th class="px-4 py-2">תאריך</th>
+        <th class="px-4 py-2">שעה</th>
+        <th class="px-4 py-2">סטטוס</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="bg-card shadow-sm">
+        <td class="px-4 py-3">ניקיון קהילתי</td>
+        <td class="px-4 py-3">2024-03-15</td>
+        <td class="px-4 py-3">10:00</td>
+        <td class="px-4 py-3"><span class="badge-info">בקרוב</span></td>
+      </tr>
+      <tr class="bg-card shadow-sm">
+        <td class="px-4 py-3">מפגש מועדון ספרים</td>
+        <td class="px-4 py-3">2024-03-20</td>
+        <td class="px-4 py-3">19:00</td>
+        <td class="px-4 py-3"><span class="badge-info">בקרוב</span></td>
+      </tr>
+      <tr class="bg-card shadow-sm">
+        <td class="px-4 py-3">השראת מתנדבים</td>
+        <td class="px-4 py-3">2024-04-05</td>
+        <td class="px-4 py-3">14:00</td>
+        <td class="px-4 py-3"><span class="badge-danger">בוטל</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

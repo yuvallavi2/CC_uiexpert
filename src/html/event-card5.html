@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Event Card</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../../src/css/tailwind-output.css">
+  <style>
+    body {
+      background: var(--color-background);
+      color: var(--color-foreground);
+      font-family: var(--font-sans);
+    }
+  </style>
+</head>
+<body class="rtl p-6">
+
+  <div class="max-w-4xl mx-auto">
+    <div class="card">
+      <h1 class="heading mb-6">כרטיס אירוע</h1>
+
+      <form class="space-y-6">
+
+        <!-- Event ID (Read-only/Disabled) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <label class="block">
+            <span class="block text-sm font-medium mb-1">מזהה אירוע</span>
+            <input
+              type="text"
+              id="Event_ID"
+              name="Event_ID"
+              class="input bg-slate-50"
+              placeholder="##########"
+              maxlength="10"
+              disabled
+              aria-label="Event ID"
+            />
+          </label>
+        </div>
+
+        <!-- Event Type & Name -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <label class="block">
+            <span class="block text-sm font-medium mb-1">
+              סוג אירוע <span class="text-red-500">*</span>
+            </span>
+            <select
+              id="ComboEventType"
+              name="ComboEventType"
+              class="input"
+              required
+              aria-label="Event Type"
+            >
+              <option value="">בחר סוג אירוע</option>
+            </select>
+          </label>
+
+          <label class="block">
+            <span class="block text-sm font-medium mb-1">שם אירוע</span>
+            <input
+              type="text"
+              id="Event_Name"
+              name="Event_Name"
+              class="input"
+              maxlength="50"
+              aria-label="Event Name"
+            />
+          </label>
+        </div>
+
+        <!-- Event Location -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <label class="block">
+            <span class="block text-sm font-medium mb-1">מיקום אירוע</span>
+            <select
+              id="ComboEventLocation"
+              name="ComboEventLocation"
+              class="input"
+              aria-label="Event Location"
+            >
+              <option value="">בחר מיקום</option>
+            </select>
+          </label>
+        </div>
+
+        <!-- Start & End Date -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <label class="block">
+            <span class="block text-sm font-medium mb-1">
+              תאריך התחלה <span class="text-red-500">*</span>
+            </span>
+            <input
+              type="date"
+              id="Start_Date"
+              name="Start_Date"
+              class="input"
+              placeholder="DD/MM/YYYY"
+              required
+              aria-label="Start Date"
+            />
+          </label>
+
+          <label class="block">
+            <span class="block text-sm font-medium mb-1">
+              תאריך סיום <span class="text-red-500">*</span>
+            </span>
+            <input
+              type="date"
+              id="End_Date"
+              name="End_Date"
+              class="input"
+              placeholder="DD/MM/YYYY"
+              required
+              aria-label="End Date"
+            />
+          </label>
+        </div>
+
+        <!-- Start & End Time -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <label class="block">
+            <span class="block text-sm font-medium mb-1">שעת התחלה</span>
+            <input
+              type="time"
+              id="EventStartTime"
+              name="EventStartTime"
+              class="input"
+              placeholder="HH:MM"
+              aria-label="Event Start Time"
+            />
+          </label>
+
+          <label class="block">
+            <span class="block text-sm font-medium mb-1">שעת סיום</span>
+            <input
+              type="time"
+              id="Event_Inforrmation_End_Time"
+              name="Event_Inforrmation_End_Time"
+              class="input"
+              placeholder="HH:MM"
+              aria-label="Event End Time"
+            />
+          </label>
+        </div>
+
+        <!-- Min & Max Attendees -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <label class="block">
+            <span class="block text-sm font-medium mb-1">מינימום משתתפים</span>
+            <input
+              type="number"
+              id="Minimum_Attendees"
+              name="Minimum_Attendees"
+              class="input"
+              placeholder="#####"
+              min="0"
+              max="99999"
+              aria-label="Minimum Attendees"
+            />
+          </label>
+
+          <label class="block">
+            <span class="block text-sm font-medium mb-1">מקסימום משתתפים</span>
+            <input
+              type="number"
+              id="Maximum_Attendees"
+              name="Maximum_Attendees"
+              class="input"
+              placeholder="#####"
+              min="0"
+              max="99999"
+              aria-label="Maximum Attendees"
+            />
+          </label>
+        </div>
+
+        <!-- Registered Members Subform (Wireframe) -->
+        <div class="border border-border rounded-md p-6 bg-slate-50">
+          <div class="text-center text-muted">
+            <div class="text-lg font-medium mb-2">רשימת חברים רשומים</div>
+            <div class="text-sm">[ SubForm: SfRegisteredMembers ]</div>
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex gap-3 justify-end pt-4">
+          <button
+            type="button"
+            id="btnQuit"
+            class="btn-ghost"
+            aria-label="Quit"
+          >
+            CreateQuit
+          </button>
+
+          <button
+            type="submit"
+            id="btnSave"
+            class="btn-primary"
+            aria-label="Save Event"
+          >
+            Save
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
